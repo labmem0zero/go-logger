@@ -1,1 +1,1 @@
-module logger
+module github.com/labmem0zero/go-logger
