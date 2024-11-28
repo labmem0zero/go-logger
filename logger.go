@@ -9,7 +9,7 @@ import (
 )
 
 type logger interface {
-	Write(logLevel string, i ...interface{})
+	Write(logLevel string, reqID string, i ...interface{})
 }
 
 type Logger struct {
@@ -20,38 +20,38 @@ func New(loggers ...logger) Logger {
 	return Logger{loggers: loggers}
 }
 
-func (log Logger) Debug(i ...interface{}) {
-	i = append([]interface{}{getFuncName()}, i...)
+func (log Logger) Debug(reqID string, i ...interface{}) {
+	i = append(i, []interface{}{getFuncName()}...)
 	for _, l := range log.loggers {
-		l.Write(debug, i...)
+		l.Write(debug, reqID, i...)
 	}
 }
 
-func (log Logger) Info(i ...interface{}) {
-	i = append([]interface{}{getFuncName()}, i...)
+func (log Logger) Info(reqID string, i ...interface{}) {
+	i = append(i, []interface{}{getFuncName()}...)
 	for _, l := range log.loggers {
-		l.Write(info, i...)
+		l.Write(info, reqID, i...)
 	}
 }
 
-func (log Logger) Warn(i ...interface{}) {
-	i = append([]interface{}{getFuncName()}, i...)
+func (log Logger) Warn(reqID string, i ...interface{}) {
+	i = append(i, []interface{}{getFuncName()}...)
 	for _, l := range log.loggers {
-		l.Write(warning, i...)
+		l.Write(warning, reqID, i...)
 	}
 }
 
-func (log Logger) Error(i ...interface{}) {
-	i = append([]interface{}{getFuncName()}, i...)
+func (log Logger) Error(reqID string, i ...interface{}) {
+	i = append(i, []interface{}{getFuncName()}...)
 	for _, l := range log.loggers {
-		l.Write(err, i...)
+		l.Write(err, reqID, i...)
 	}
 }
 
-func (log Logger) Fatal(i ...interface{}) {
-	i = append([]interface{}{getFuncName()}, i...)
+func (log Logger) Fatal(reqID string, i ...interface{}) {
+	i = append(i, []interface{}{getFuncName()}...)
 	for _, l := range log.loggers {
-		l.Write(fatal, i...)
+		l.Write(fatal, reqID, i...)
 	}
 	os.Exit(1)
 }
