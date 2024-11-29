@@ -42,13 +42,11 @@ func NewFileLogger(filename string, settings impl.LoggerSettings) (l FLogger, er
 }
 
 func (l FLogger) Write(level string, reqID string, v ...interface{}) {
-	fmt.Println("Starting: ", *l.offset)
 	v = append([]interface{}{time.Now().Format("2006-01-02 15:04:05.0000"), l.settings.Environment, level, l.settings.AppName, l.settings.AppID, reqID}, v...)
 	out := []byte(l.format.String(v...))
 	if b, err := l.out.WriteAt(out, *l.offset); err != nil {
 		fmt.Println(err)
 	} else {
 		*l.offset += int64(b)
-		fmt.Println("After: ", *l.offset)
 	}
 }

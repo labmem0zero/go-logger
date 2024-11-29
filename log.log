@@ -5,3 +5,8 @@
 2024-11-28 16:50:18.4542 environment: EnvTest log_level: DEBUG app_name: AppNameTest app_id: AppIDTest req_id: ReqIDTest ReqIDTestSomeAdditionalData1SomeAdditionalData2[testing.tRunner:1689] 
 2024-11-28 16:51:22.2941 environment: EnvTest log_level: DEBUG app_name: AppNameTest app_id: AppIDTest req_id: ReqIDTest ReqIDTestSomeAdditionalData1SomeAdditionalData2testing.tRunner:1689 
 2024-11-28 16:53:33.6532 environment: EnvTest log_level: DEBUG app_name: AppNameTest app_id: AppIDTest req_id: ReqIDTest ReqIDTestSomeAdditionalData1SomeAdditionalData2testing.tRunner:1689 
+2024-11-29 17:10:32.0532 environment: EnvTest log_level: DEBUG app_name: AppNameTest app_id: AppIDTest req_id: ReqIDTest ReqIDTest SomeAdditionalData1 SomeAdditionalData2 go-logger.TestNewLogger:28
+ 
+2024-11-29 17:11:05.4256 environment: EnvTest log_level: DEBUG app_name: AppNameTest app_id: AppIDTest req_id: ReqIDTest ReqIDTest SomeAdditionalData1 SomeAdditionalData2 go-logger.TestNewLogger:28
+ 
+2024-11-29 17:13:56.2206 environment: EnvTest log_level: DEBUG app_name: AppNameTest app_id: AppIDTest req_id: ReqIDTest ReqIDTest SomeAdditionalData1 SomeAdditionalData2 go-logger.TestNewLogger:28

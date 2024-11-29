@@ -59,7 +59,7 @@ func (log Logger) Fatal(reqID string, i ...interface{}) {
 func getFuncName() string {
 	var buffer bytes.Buffer
 	pc := make([]uintptr, 10)
-	runtime.Callers(4, pc)
+	runtime.Callers(3, pc)
 	frame, _ := runtime.CallersFrames(pc).Next()
 	function := frame.Function
 	line := frame.Line
