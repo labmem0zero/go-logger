@@ -21,35 +21,35 @@ func New(loggers ...logger) Logger {
 }
 
 func (log Logger) Debug(reqID string, i ...interface{}) {
-	i = append(i, []interface{}{getFuncName()}...)
+	i = append([]interface{}{getFuncName()}, i...)
 	for _, l := range log.loggers {
 		l.Write(debug, reqID, i...)
 	}
 }
 
 func (log Logger) Info(reqID string, i ...interface{}) {
-	i = append(i, []interface{}{getFuncName()}...)
+	i = append([]interface{}{getFuncName()}, i...)
 	for _, l := range log.loggers {
 		l.Write(info, reqID, i...)
 	}
 }
 
 func (log Logger) Warn(reqID string, i ...interface{}) {
-	i = append(i, []interface{}{getFuncName()}...)
+	i = append([]interface{}{getFuncName()}, i...)
 	for _, l := range log.loggers {
 		l.Write(warning, reqID, i...)
 	}
 }
 
 func (log Logger) Error(reqID string, i ...interface{}) {
-	i = append(i, []interface{}{getFuncName()}...)
+	i = append([]interface{}{getFuncName()}, i...)
 	for _, l := range log.loggers {
 		l.Write(err, reqID, i...)
 	}
 }
 
 func (log Logger) Fatal(reqID string, i ...interface{}) {
-	i = append(i, []interface{}{getFuncName()}...)
+	i = append([]interface{}{getFuncName()}, i...)
 	for _, l := range log.loggers {
 		l.Write(fatal, reqID, i...)
 	}

@@ -19,7 +19,7 @@ func TestNewLogger(t *testing.T) {
 		log.Println(err)
 		return
 	}
-	tl, err := tlogger.NewLogger("123456789012:ASDFDFG_dfgdfg_rt45y4dfgdfgertgert", -123456789, impl.LoggerSettings{
+	tl, err := tlogger.NewLogger("", 0, impl.LoggerSettings{
 		AppName:     "AppNameTest",
 		AppID:       "AppIDTest",
 		Environment: "EnvTest",
