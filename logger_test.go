@@ -24,7 +24,7 @@ func TestNewLogger(t *testing.T) {
 		AppID:       "AppIDTest",
 		Environment: "EnvTest",
 		Levels: map[string]struct{}{
-			levelErr: {},
+			LevelErr: {},
 		},
 	})
 	l := New(fl, tl)

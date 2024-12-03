@@ -23,35 +23,35 @@ func New(loggers ...logger) Logger {
 func (log Logger) Debug(reqID string, i ...interface{}) {
 	i = append([]interface{}{getFuncName()}, i...)
 	for _, l := range log.loggers {
-		l.Write(levelDebug, reqID, i...)
+		l.Write(LevelDebug, reqID, i...)
 	}
 }
 
 func (log Logger) Info(reqID string, i ...interface{}) {
 	i = append([]interface{}{getFuncName()}, i...)
 	for _, l := range log.loggers {
-		l.Write(levelInfo, reqID, i...)
+		l.Write(LevelInfo, reqID, i...)
 	}
 }
 
 func (log Logger) Warn(reqID string, i ...interface{}) {
 	i = append([]interface{}{getFuncName()}, i...)
 	for _, l := range log.loggers {
-		l.Write(levelWarning, reqID, i...)
+		l.Write(LevelWarning, reqID, i...)
 	}
 }
 
 func (log Logger) Error(reqID string, i ...interface{}) {
 	i = append([]interface{}{getFuncName()}, i...)
 	for _, l := range log.loggers {
-		l.Write(levelErr, reqID, i...)
+		l.Write(LevelErr, reqID, i...)
 	}
 }
 
 func (log Logger) Fatal(reqID string, i ...interface{}) {
 	i = append([]interface{}{getFuncName()}, i...)
 	for _, l := range log.loggers {
-		l.Write(levelFatal, reqID, i...)
+		l.Write(LevelFatal, reqID, i...)
 	}
 	os.Exit(1)
 }
@@ -70,9 +70,9 @@ func getFuncName() string {
 }
 
 const (
-	levelDebug   = "DEBUG"
-	levelInfo    = "INFO"
-	levelWarning = "WARNING"
-	levelErr     = "ERROR"
-	levelFatal   = "FATAL"
+	LevelDebug   = "DEBUG"
+	LevelInfo    = "INFO"
+	LevelWarning = "WARNING"
+	LevelErr     = "ERROR"
+	LevelFatal   = "FATAL"
 )
