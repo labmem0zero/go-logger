@@ -15,7 +15,7 @@ type defaultPlain struct {
 // DefaultPlain - format:
 // `%timestamp environment: %v log_level: %v app_name: %v app_id: %v req_id: %v  func_name: %v additional: %v`
 func DefaultPlain() formats.Format {
-	return defaultPlain{f: "%v environment: %v log_level: %v app_name: %v app_id: %v req_id: %v func_name%v additional: %v"}
+	return defaultPlain{f: "%v environment: %v log_level: %v app_name: %v app_id: %v req_id: %v func_name %v additional: %v"}
 }
 
 // String
