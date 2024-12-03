@@ -15,9 +15,9 @@ type defaultHTML struct {
 // `
 // <b>Timestamp:</b><p>%v</p>
 // <b>Environment</b><p>%v</p>
+// <b>LogLevel</b><p>%v</p>
 // <b>AppName</b><p>%v</p>
 // <b>AppID</b><p>%v</p>
-// <b>LogLevel</b><p>%v</p>
 // <b>ReqID</b><p>%v</p>
 // <b>FuncName: </b>%v
 // <b>Additional</b><p>%v</p>

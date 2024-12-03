@@ -26,7 +26,7 @@ func (f defaultPlain) String(args ...interface{}) string {
 	}
 	var tail string
 	if len(args) > 7 {
-		tail = fmt.Sprintln(args[6:]...)
+		tail = fmt.Sprintln(args[7:]...)
 	} else {
 		tail = "none"
 	}
@@ -48,7 +48,7 @@ func (f defaultPlain) Byte(args ...interface{}) []byte {
 		FuncName       string `json:"func_name"`
 		AdditionalData string `json:"additional_data"`
 	}{}
-	if len(args) < 6 {
+	if len(args) < 7 {
 		s.LogTime = time.Now().String()
 		s.AdditionalData = fmt.Sprintln(args)
 	} else {
@@ -60,8 +60,8 @@ func (f defaultPlain) Byte(args ...interface{}) []byte {
 		s.ReqID = args[5].(string)
 		s.FuncName = args[6].(string)
 	}
-	if len(args) > 6 {
-		s.AdditionalData = fmt.Sprintln(args[6:]...)
+	if len(args) > 7 {
+		s.AdditionalData = fmt.Sprintln(args[7:]...)
 	}
 	b, err := json.Marshal(s)
 	if err != nil {
