@@ -30,6 +30,11 @@ func NewLogger(token string, chatId int64, settings impl.LoggerSettings) (l TLog
 }
 
 func (l TLogger) Write(level string, reqID string, v ...interface{}) {
+	if l.settings.Levels != nil {
+		if _, ok := l.settings.Levels[level]; !ok {
+			return
+		}
+	}
 	v = append([]interface{}{time.Now().Format("2006-01-02 15:04:05.0000"), l.settings.Environment, level, l.settings.AppName, l.settings.AppID, reqID}, v...)
 	msg := tgbotapi.NewMessage(l.chatId, l.format.String(v...))
 	msg.ParseMode = tgbotapi.ModeHTML

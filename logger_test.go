@@ -23,7 +23,10 @@ func TestNewLogger(t *testing.T) {
 		AppName:     "AppNameTest",
 		AppID:       "AppIDTest",
 		Environment: "EnvTest",
+		Levels: map[string]struct{}{
+			levelErr: {},
+		},
 	})
 	l := New(fl, tl)
-	l.Debug("ReqIDTest", "SomeAdditionalData1", "SomeAdditionalData2")
+	l.Debug("reqID", "Hello, world!")
 }
