@@ -26,7 +26,7 @@ func (f defaultPlain) String(args ...interface{}) string {
 	}
 	var tail string
 	if len(args) > 7 {
-		tail = fmt.Sprintln(args[5:]...)
+		tail = fmt.Sprintln(args[6:]...)
 	} else {
 		tail = "none"
 	}
